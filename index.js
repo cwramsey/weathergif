@@ -2,14 +2,14 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-app.use(cors({
-  origin: /^[^.\s]+\.mixmax\.com$/,
-  credentials: true
-}));
-
 app.set('port', (process.env.PORT || 5000));
 
-app.get('/typeahead', require('./lib/typeahead'));
+const corsOpts = {
+  origin: /^[^.\s]+\.mixmax\.com$/,
+  credentials: true
+};
+
+app.get('/typeahead', cors(corsOpts), require('./lib/typeahead'));
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
