@@ -2,7 +2,10 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-app.use(cors());
+app.use(cors({
+  origin: /^[^.\s]+\.mixmax\.com$/,
+  credentials: true
+}));
 
 app.set('port', (process.env.PORT || 5000));
 
