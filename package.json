@@ -7,12 +7,16 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node --harmony_destructuring index.js"
   },
   "dependencies": {
+    "body-parser": "^1.12.2",
     "cors": "^2.7.1",
+    "dotenv": "^2.0.0",
     "ejs": "2.4.1",
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "node-fetch": "^1.5.3",
+    "zipcodes": "^2.1.0"
   },
   "repository": {
     "type": "git",
